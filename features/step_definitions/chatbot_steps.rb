@@ -42,21 +42,21 @@ Then("la réponse ne devrait pas être vide") do
 end
 
 Then("la réponse devrait être une réponse positive") do
-  expect(ChatGptService::POSITIVE_RESPONSES).to include(@response),
+  expect(FallbackResponderService::POSITIVE_RESPONSES).to include(@response),
     "Attendu une réponse positive, mais reçu : #{@response.inspect}"
 end
 
 Then("la réponse devrait être une réponse négative") do
-  expect(ChatGptService::NEGATIVE_RESPONSES).to include(@response),
+  expect(FallbackResponderService::NEGATIVE_RESPONSES).to include(@response),
     "Attendu une réponse négative, mais reçu : #{@response.inspect}"
 end
 
 Then("la réponse devrait être une réponse de question") do
-  expect(ChatGptService::QUESTION_RESPONSES).to include(@response),
+  expect(FallbackResponderService::QUESTION_RESPONSES).to include(@response),
     "Attendu une réponse de question, mais reçu : #{@response.inspect}"
 end
 
 Then("la réponse devrait être une réponse par défaut") do
-  expect(ChatGptService::DEFAULT_RESPONSES).to include(@response),
+  expect(FallbackResponderService::DEFAULT_RESPONSES).to include(@response),
     "Attendu une réponse par défaut, mais reçu : #{@response.inspect}"
 end
